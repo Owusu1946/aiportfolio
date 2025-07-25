@@ -83,52 +83,52 @@ export default function ChatMessageContent({
 }: ChatMessageContentProps) {
   // Handle the text content directly
   const renderContent = () => {
-    // Split content by code block markers
+      // Split content by code block markers
     const contentParts = message.content.split('```');
 
-    return (
+      return (
       <div className="w-full space-y-4">
-        {contentParts.map((content, i) =>
-          i % 2 === 0 ? (
-            // Regular text content
-            <div key={`text-${i}`} className="prose dark:prose-invert w-full">
-              <Markdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  p: ({ children }) => (
-                    <p className="break-words whitespace-pre-wrap">
-                      {children}
-                    </p>
-                  ),
-                  ul: ({ children }) => (
-                    <ul className="my-4 list-disc pl-6">{children}</ul>
-                  ),
-                  ol: ({ children }) => (
-                    <ol className="my-4 list-decimal pl-6">{children}</ol>
-                  ),
-                  li: ({ children }) => <li className="my-1">{children}</li>,
-                  a: ({ href, children }) => (
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-500 hover:underline"
-                    >
-                      {children}
-                    </a>
-                  ),
-                }}
-              >
-                {content}
-              </Markdown>
-            </div>
-          ) : (
-            // Code block content
-            <CodeBlock key={`code-${i}`} content={content} />
-          )
-        )}
-      </div>
-    );
+          {contentParts.map((content, i) =>
+            i % 2 === 0 ? (
+              // Regular text content
+              <div key={`text-${i}`} className="prose dark:prose-invert w-full">
+                <Markdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    p: ({ children }) => (
+                      <p className="break-words whitespace-pre-wrap">
+                        {children}
+                      </p>
+                    ),
+                    ul: ({ children }) => (
+                      <ul className="my-4 list-disc pl-6">{children}</ul>
+                    ),
+                    ol: ({ children }) => (
+                      <ol className="my-4 list-decimal pl-6">{children}</ol>
+                    ),
+                    li: ({ children }) => <li className="my-1">{children}</li>,
+                    a: ({ href, children }) => (
+                      <a
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:underline"
+                      >
+                        {children}
+                      </a>
+                    ),
+                  }}
+                >
+                  {content}
+                </Markdown>
+              </div>
+            ) : (
+              // Code block content
+              <CodeBlock key={`code-${i}`} content={content} />
+            )
+          )}
+        </div>
+      );
   };
 
   return <div className="w-full">{renderContent()}</div>;

@@ -19,7 +19,7 @@ Ask a question — my AI avatar replies instantly.
 This is not a portfolio.  
 It's a **conversation tailored to your curiosity**.
 
-➡️ **Try it now:** [https://aiportfolio.vercel.app](Live Demo)  
+➡️ **Try it now:** [https://aiportfolio-rho.vercel.app](LiveDemo)  
 *What will you ask?*
 
 ## 🚀 How to run
@@ -60,7 +60,7 @@ Want to run this project locally? Here's what you need:
    Navigate to `http://localhost:3000`
 
 ### Getting your **tokens**
-- **Google Gemini API Key**: Get it from [ai.google.dev](https://ai.google.dev/)
+- **Google Gemini API Key**: Get it from [Google Studio](https://aistudio.google.com/app/apikey)
 - **GitHub Token**: Generate one at [github.com/settings/tokens](https://github.com/settings/personal-access-tokens) with repo access
 
 ## 🌟 Cool features to add
